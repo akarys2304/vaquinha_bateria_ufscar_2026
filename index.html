@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaquinha Bateria UFSCar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="pix-fixo-lateral" class="pix-bubble">
+        <p>PIX DA BATERIA</p>
+        <img src="assets/pix.png" alt="QR Code Pix Fixo">
+        <small>Contribua!</small>
+    </div>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Bateria UFSCar</a>
+            <div class="menu-icon" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#detalhes-meta">Vaquinha</a></li>
+                <li><a href="#tragedia">Prejuizos</a></li>
+                <li><a href="#ajudar">Outras formas de ajudar</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero-section">
+        <div class="overlay"></div>
+        <div class="content">
+            <img src="assets/logo_branco.png" alt="Bateria UFSCAR 2026" style="max-width: 200px;">
+            <h1>Contribua com a Nossa Vaquinha!</h1>
+            <button id="btn-doar" class="btn-grande">APOIAR AGORA</button>
+            
+            <div id="qrcode-container" class="hidden">
+                <p>Escaneie para ajudar:</p>
+                <img src="assets/pix.png" alt="QR Code Pix">
+            </div>
+        </div>
+    </section>
+
+    <section id="detalhes-meta" class="meta-section">
+        <div class="meta-container">
+            <div class="meta-titulos">
+                <h1>Nossa meta é arrecadarmos <br> R$ 12.000!</h1>
+                <p class="subtitulo-meta">Já arrecadamos <span class="valor-atual">R$0</span>/<span class="valor-total">R$12.000</span></p>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="meta-texto">
+                <p>
+                    Este dinheiro será destinado para a compra de novos instrumentos 
+                    <strong>(surdos de primeira, segunda e terceira)</strong> e aparelhagem eletrônica 
+                    <strong>(caixa de som, amplificador, microfone e mesa de som)</strong>.
+                </p>
+                <p>
+                    Perdemos tudo numa  <strong> enchente do laguinho </strong> da própria UFSCar por <strong>descaso</strong> da 
+                    Prefeitura Universitária em nos deixar em um local que já era sujeito a alagamento 
+                    de forma provisória, mas nunca mais moveram um dedo para nos tirar dali. 
+                    Os prejuízos foram enormes e por isso precisamos da vaquinha.
+                </p>
+            </div>
+        </div>
+        <div class="att">
+                <p>Atualizações sobre doações da Vaquinha todos os dias às 21:00</p>
+        </div>
+    </section>
+    <section id="tragedia" class="tragedia-section">
+        <div class="tragedia-header">
+            <h1>Uma tragédia que jamais esqueceremos, 8 de fevereiro</h1>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="media-item">
+                    <img src="assets/salinha_chocante.jpeg" alt="Estragos na salinha 1">
+                </div>
+                
+                <div class="media-item">
+                    <video muted playsinline loop controls>
+                        <source src="assets/estado_salinha.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+
+                <div class="media-item">
+                    <img src="assets/caixa.jpeg" alt="Limpando a salinha">
+                </div>
+
+                <div class="media-item">
+                    <video muted playsinline loop controls>
+                        <source src="assets/video_surdo_xixi.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+
+                <div class="media-item">
+                    <img src="assets/surdo_gabi.jpeg" alt="Limpando a salinha">
+                </div>
+
+                <div class="media-item">
+                    <video muted playsinline loop controls>
+                        <source src="assets/bandeiroes.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+
+                <div class="media-item">
+                    <img src="assets/limpeza.jpeg" alt="Limpando a salinha">
+                </div>
+
+                 <div class="media-item">
+                    <video muted playsinline loop controls>
+                        <source src="assets/video_primeiros_surdos.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+                <div class="media-item">
+                    <video muted playsinline loop controls>
+                        <source src="assets/ganza_moiado.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+                <div class="media-item">
+                    <img src="assets/peixe.jpeg" alt="Limpando a salinha">
+                </div>
+
+            </div>
+
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+    <section id="ajudar" class="ajudar-section">
+        <div class="ajudar-container">
+            <div class="ajudar-cards">
+                <h2>Outras formas de ajudar! Você pode contratar os nossos shows ou batucadas!</h2>
+                
+                <div class="card-ajuda">
+                    <h3>Batucadas</h3>
+                    <p>Podendo ser batucadas de 15, 20, 30 minutos! Podemos combinar uma apresentação muito animada para seu evento!</p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h3>Shows</h3>
+                    <p>Show completo: batucada + canções populares brasileiras pra animar muito o ambiente e contagiar com o ritmo do samba. </p>
+                </div>
+
+                <div class="card-ajuda">
+                    <h3>Parcerias</h3>
+                    <p>Se você tem um estabelecimento, vamos firmar uma parceria!</p>
+                </div>
+            </div>
+
+            <div class="ajudar-slide">
+                <div class="apresentacao-carousel">
+                    <div class="apresentacao-item active">
+                        <img src="assets/casamento_palco.jpg" alt="Apresentação Bateria">
+                    </div>
+                    <div class="apresentacao-item">
+                        <img src="assets/casamento_bateria.JPG" alt="Apresentação Bateria">
+                    </div>
+                    <div class="apresentacao-item">
+                        <img src="assets/pholia_2025.jpg" alt="Apresentação Bateria">
+                    </div>
+                    <div class="apresentacao-item">
+                        <img src="assets/pholia_2025_2.jpg" alt="Apresentação Bateria">
+                    </div>
+                    <div class="apresentacao-item">
+                        <img src="assets/festaa.jpg" alt="Apresentação Bateria">
+                    </div>
+                    <div class="apresentacao-item">
+                        <img src="assets/festaa_cau.jpg" alt="Apresentação Bateria">
+                    </div>
+                    <div class="apresentacao-item">
+                        <img src="assets/pholia_2026.jpeg" alt="Apresentação Bateria">
+                    </div>
+                    
+                    <button class="slide-arrow prev-arrow" onclick="changeApresSlide(-1)">&#10094;</button>
+                    <button class="slide-arrow next-arrow" onclick="changeApresSlide(1)">&#10095;</button>
+
+                    <div class="dots-container">
+                        <span class="dot active" onclick="currentApresSlide(0)"></span>
+                        <span class="dot" onclick="currentApresSlide(1)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+    <footer id="contato" class="footer-section">
+        <div class="footer-overlay"></div>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-info">
+                    <h2>Contato</h2>
+                    <p><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/bateriaufscar" target="_blank">@bateriaufscar</a></p>
+                    <p><i class="fab fa-tiktok"></i> TikTok: <a href="https://tiktok.com/@bateriaufscar" target="_blank">@bateriaufscar</a></p>
+                    <p><i class="fas fa-envelope"></i> E-mail: <a href="mailto:contatobateriaufscar@gmail.com">contatobateriaufscar@gmail.com</a></p>
+                    <p>Universidade Federal de São Carlos</p>
+                </div>
+
+                <div class="footer-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3699.274191316413!2d-47.88296362391696!3d-21.98184510595305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b870c29415f33d%3A0x6334f59846b7a541!2sUFSCar%20-%20Universidade%20Federal%20de%20S%C3%A3o%20Carlos!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>25 anos de bateria ufscar</p>
+                <p>Com muito amor até o fim</p>
+                <p class="grito">Federal joga eu vou</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
