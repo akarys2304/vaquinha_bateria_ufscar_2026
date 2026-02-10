@@ -612,6 +612,24 @@ footer {
     }
 }
 
+/* botao fechar pix */
+.close-btn {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    background: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* Qrcode flutuante */
 .pix-bubble {
