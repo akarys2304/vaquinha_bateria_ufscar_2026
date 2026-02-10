@@ -118,3 +118,36 @@ const progressBar = document.getElementById('progress-bar');
 setTimeout(() => {
     progressBar.style.width = porcentagem + '%';
 }, 300);
+
+// copia cola código pix
+const elementosPix = document.querySelectorAll('.copiar-pix');
+
+elementosPix.forEach(elemento => {
+    elemento.addEventListener('click', function(e) {
+        // Evita que clique no botão de fechar dispare a cópia
+        if (e.target.classList.contains('close-btn')) return;
+
+        const textoPix = this.getAttribute('data-pix');
+
+        // Tenta copiar para a área de transferência
+        navigator.clipboard.writeText(textoPix).then(() => {
+            // Feedback visual: Muda o texto temporariamente
+            const avisoOriginal = this.querySelector('small') || this.querySelector('p:nth-child(2)');
+            const textoAnterior = avisoOriginal.innerText;
+            
+            avisoOriginal.innerText = "✅ CÓDIGO COPIADO!";
+            avisoOriginal.style.color = "#28a745"; // Verde sucesso
+
+            // Volta ao normal depois de 2 segundos
+            setTimeout(() => {
+                avisoOriginal.innerText = textoAnterior;
+                avisoOriginal.style.color = "";
+            }, 2000);
+            
+            console.log("PIX copiado com sucesso!");
+        }).catch(err => {
+            console.error("Erro ao copiar: ", err);
+            alert("Não foi possível copiar automaticamente. O código é: " + textoPix);
+        });
+    });
+});

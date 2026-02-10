@@ -29,11 +29,31 @@ section {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Mantém a logo na esquerda e menu na direita */
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px; /* Controle a distância exata aqui (diminua se quiser mais perto) */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Garante que as imagens não empurrem o texto para longe */
+.logo-img {
+    height: 40px;
+    width: auto;
+    flex-shrink: 0; /* Impede que a imagem diminua ou mude de proporção */
+}
+.logo-vermelha {
+    display: none;
 }
 
 .logo {
@@ -96,6 +116,30 @@ section {
 #navbar.scrolled .bar {
   background-color: #333;
 }
+
+/* Quando a navbar ganha a classe .scrolled (fundo branco) */
+#navbar.scrolled .logo-container {
+    color: #8b0000; /* Texto vira vinho */
+}
+
+#navbar.scrolled .logo-branca {
+    display: none; /* Esconde a branca */
+}
+
+#navbar.scrolled .logo-vermelha {
+    display: block; /* Mostra a vermelha */
+}
+
+/* Ajuste Mobile para garantir que o texto não quebre */
+@media (max-width: 480px) {
+    .logo-container span {
+        font-size: 1.1rem;
+    }
+    .logo-img {
+        height: 30px;
+    }
+}
+
 
 /* --- Media Query para Celular --- */
 @media (max-width: 768px) {
@@ -364,11 +408,25 @@ h1 {
 }
 
 .ajudar-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    gap: 40px;
-    align-items: center;
+}
+
+.ajudar-texto-projeto {
+    flex: 0 0 100%; /* Força a ocupar 100% da largura da linha */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.ajudar-texto-projeto p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd; /* Uma linha sutil para separar da parte de contratação */
 }
 
 .ajudar-cards {
@@ -402,9 +460,21 @@ h1 {
 .ajudar-slide {
     flex: 1;
     position: relative;
+    height: 450px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.ajudar-cards, .ajudar-slide {
+    flex: 1; /* Divide o espaço restante (50% cada aproximadamente) */
+    min-width: 300px; /* Garante que no mobile eles empilhem */
+}
+
+@media (max-width: 768px) {
+    .ajudar-texto-projeto {
+        text-align: center;
+    }
 }
 
 .apresentacao-carousel {

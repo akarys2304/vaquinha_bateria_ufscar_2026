@@ -3,19 +3,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaquinha Bateria UFSCar</title>
+    <link rel="icon" type="image/png" href="assets/logo_vermelho.png">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="pix-fixo-lateral" class="pix-bubble">
+    <div id="pix-fixo-lateral" class="pix-bubble copiar-pix" 
+        data-pix="00020126490014BR.GOV.BCB.PIX0127tesourariabateria@gmail.com5204000053039865802BR5919Vitor Hugo da Silva6009SAO PAULO62140510WJkiVWZNSC6304A2EF">
         <button id="btn-fechar-flutuante" class="close-btn">×</button>
         <p>PIX DA BATERIA</p>
         <img src="assets/pix.png" alt="QR Code Pix Fixo">
-        <small>Contribua!</small>
+        <small>Clique para copiar o código</small>
     </div>
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Bateria UFSCar</a>
+            <a href="#" class="logo-container"><img src="assets/logo_branco.png" class="logo-img logo-branca"><img src="assets/logo_vermelho.png" class="logo-img logo-vermelha"><span>Bateria UFSCar</span></a>
             <div class="menu-icon" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -38,9 +40,15 @@
             <h1>Contribua com a Nossa Vaquinha!</h1>
             <button id="btn-doar" class="btn-grande">APOIAR AGORA</button>
             
-            <div id="qrcode-container" class="hidden">
-                <p>Escaneie para ajudar:</p>
+            <div id="qrcode-container" class="hidden copiar-pix" 
+                data-pix="00020126490014BR.GOV.BCB.PIX0127tesourariabateria@gmail.com5204000053039865802BR5919Vitor Hugo da Silva6009SAO PAULO62140510WJkiVWZNSC6304A2EF"
+                style="cursor: pointer;">
+                <p><strong>PIX DA BATERIA UFSCAR</strong></p>
+                <p style="font-size: 0.8rem; color: #8b0000;">Cliquem em qualquer lugar aqui para copiar o código</p>
                 <img src="assets/pix.png" alt="QR Code Pix">
+                <p class="codigo-visual" style="font-size: 0.7rem; word-break: break-all; opacity: 0.7;">
+                    00020126490014BR.GOV.BCB.PIX0127tesourariabateria@gmail.com5204000053039865802BR5919Vitor Hugo da Silva6009SAO PAULO62140510WJkiVWZNSC6304A2EF
+                </p>
             </div>
         </div>
     </section>
@@ -48,8 +56,8 @@
     <section id="detalhes-meta" class="meta-section">
         <div class="meta-container">
             <div class="meta-titulos">
-                <h1>Nossa meta é arrecadarmos <br> R$ 12.000!</h1>
-                <p class="subtitulo-meta">Já arrecadamos <span class="valor-atual">R$0</span>/<span class="valor-total">R$12.000</span></p>
+                <h1>Nossa meta é arrecadarmos <br> R$ 20.000!</h1>
+                <p class="subtitulo-meta">Já arrecadamos <span class="valor-atual">R$0</span>/<span class="valor-total">R$20.000</span></p>
                 <div class="progress-container">
                     <div id="progress-bar" class="progress-bar"></div>
                 </div>
@@ -57,18 +65,28 @@
 
             <div class="meta-texto">
                 <p>
-                    Este dinheiro será destinado para a compra de novos instrumentos 
-                    <strong>(surdos de primeira, segunda e terceira)</strong> e aparelhagem eletrônica 
-                    <strong>(caixa de som, amplificador, microfone e mesa de som)</strong>.
+                    Após ser negligenciada por anos consecutivos pela universidade, a <strong>Bateria UFSCar</strong> enfrenta o momento mais crítico de seus 25 anos de história.
+                </p>
+                <br>
+                <p>
+                    A sala disponibilizada pela Prefeitura Universitária para guardarmos nosso patrimônio fica em um <strong>prédio abandonado</strong>, evacuado desde a grande enchente de 2022 por riscos estruturais. Desde 2023, quando fomos "empurrados" para este local, convivemos com <strong>mofo, sujeira, instabilidade e falta de segurança</strong>. Furtos e a presença de animais peçonhentos tornaram-se comuns em nossa rotina de ensaios.
+                </p>
+                <br>
+                <p>
+                    Esquecidos em uma estrutura precária e situada em zona de risco, o pior aconteceu: após chuvas intensas, o <strong>laguinho da UFSCar transbordou</strong> na madrugada de 8 de fevereiro. A água invadiu nosso espaço, deixando instrumentos e equipamentos em <strong>condições irreversíveis</strong>.
+                </p>
+                <br>
+                <p>
+                    Esta vaquinha surge com a urgência de arrecadarmos fundos para a compra de novos instrumentos e <strong>aparelhagem de som</strong>, elementos indispensáveis para as apresentações que sustentam nosso projeto.
                 </p>
                 <p>
-                    Perdemos tudo numa  <strong> enchente do laguinho </strong> da própria UFSCar por <strong>descaso</strong> da 
-                    Prefeitura Universitária em nos deixar em um local que já era sujeito a alagamento 
-                    de forma provisória, mas nunca mais moveram um dedo para nos tirar dali. 
-                    Os prejuízos foram enormes e por isso precisamos da vaquinha.
+                    Essa tragédia ficará marcada em nossos corações, mas com a sua ajuda, transformaremos esse luto em ritmo novamente. 
+                    <br>
+                    <strong>Agradecemos imensamente qualquer contribuição!</strong>
                 </p>
             </div>
         </div>
+        <br>
         <div class="att">
                 <p>Atualizações sobre doações da Vaquinha todos os dias às 21:00</p>
         </div>
@@ -192,6 +210,15 @@
                         <span class="dot" onclick="currentApresSlide(1)"></span>
                     </div>
                 </div>
+            </div>
+
+            <div class="ajudar-texto-projeto">
+                <p>
+                    Nosso projeto surgiu da torcida pelas outras modalidades e ao longo dos anos fomos crescendo. 
+                    Mais de 100 calouros por ano vêm tocar conosco; somos gigantes e, mesmo assim, 
+                    deixados de lado pela faculdade. Esses shows e batucadas são nossa principal fonte de renda. 
+                    Ensaiamos muito para levar apresentações de qualidade, independente da hora e do dia!
+                </p>
             </div>
         </div>
     </section>  
