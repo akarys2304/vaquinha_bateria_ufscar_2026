@@ -1,3 +1,5 @@
+import constants from "./utils/constants.js";
+
 document.addEventListener('DOMContentLoaded', () => {
     // Seleção de elementos
     const mobileMenu = document.getElementById('mobile-menu');
@@ -98,27 +100,6 @@ if (btnFecharFixo && pixFixo) {
 }
 
 
-// lógica da barra
-const valorAtualText = document.querySelector('.valor-atual').innerText;
-const valorTotalText = document.querySelector('.valor-total').innerText;
-
-// Limpa o texto para pegar apenas os números (remove R$ e pontos)
-const valorAtual = parseFloat(valorAtualText.replace('R$', '').replace('.', '').replace(',', '.'));
-const valorTotal = parseFloat(valorTotalText.replace('R$', '').replace('.', '').replace(',', '.'));
-
-// Calcula a porcentagem
-let porcentagem = (valorAtual / valorTotal) * 100;
-
-// Garante que não passe de 100% e não seja menor que 5% (para aparecer um tiquinho de vermelho)
-if (porcentagem > 100) porcentagem = 100;
-if (porcentagem < 2 && valorAtual > 0) porcentagem = 2; 
-
-// Dispara a animação após um pequeno delay para o usuário ver crescendo
-const progressBar = document.getElementById('progress-bar');
-setTimeout(() => {
-    progressBar.style.width = porcentagem + '%';
-}, 300);
-
 // copia cola código pix
 const elementosPix = document.querySelectorAll('.copiar-pix');
 
@@ -134,7 +115,7 @@ elementosPix.forEach(elemento => {
             // Feedback visual: Muda o texto temporariamente
             const avisoOriginal = this.querySelector('small') || this.querySelector('p:nth-child(2)');
             const textoAnterior = avisoOriginal.innerText;
-            
+
             avisoOriginal.innerText = "✅ CÓDIGO COPIADO!";
             avisoOriginal.style.color = "#28a745"; // Verde sucesso
 
@@ -143,7 +124,7 @@ elementosPix.forEach(elemento => {
                 avisoOriginal.innerText = textoAnterior;
                 avisoOriginal.style.color = "";
             }, 2000);
-            
+
             console.log("PIX copiado com sucesso!");
         }).catch(err => {
             console.error("Erro ao copiar: ", err);
@@ -151,3 +132,33 @@ elementosPix.forEach(elemento => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".valor-total").forEach(element => {
+        element.textContent = constants.goalValue
+    })
+    document.querySelectorAll(".valor-atual").forEach(element => {
+        element.textContent = constants.collectedValue
+    })
+
+    // Limpa o texto para pegar apenas os números (remove R$ e pontos)
+    const valorAtual = parseFloat(constants.collectedValue.replace('R$', '').replace('.', '').replace(',', '.'));
+    const valorTotal = parseFloat(constants.goalValue.replace('R$', '').replace('.', '').replace(',', '.'));
+
+    console.log(constants.collectedValue)
+    console.log(constants.goalValue)
+    console.log(valorAtual)
+    console.log(valorTotal)
+    // Calcula a porcentagem
+    let porcentagem = (valorAtual / valorTotal) * 100;
+
+    // Garante que não passe de 100% e não seja menor que 5% (para aparecer um tiquinho de vermelho)
+    if (porcentagem > 100) porcentagem = 100;
+    if (porcentagem < 2 && valorAtual > 0) porcentagem = 2;
+
+    // Dispara a animação após um pequeno delay para o usuário ver crescendo
+    const progressBar = document.getElementById('progress-bar');
+    setTimeout(() => {
+        progressBar.style.width = porcentagem + '%';
+    }, 300);
+})
