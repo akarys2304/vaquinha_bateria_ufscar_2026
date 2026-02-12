@@ -145,10 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const valorAtual = parseFloat(constants.collectedValue.replace('R$', '').replace('.', '').replace(',', '.'));
     const valorTotal = parseFloat(constants.goalValue.replace('R$', '').replace('.', '').replace(',', '.'));
 
-    console.log(constants.collectedValue)
-    console.log(constants.goalValue)
-    console.log(valorAtual)
-    console.log(valorTotal)
     // Calcula a porcentagem
     let porcentagem = (valorAtual / valorTotal) * 100;
 
@@ -161,4 +157,18 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         progressBar.style.width = porcentagem + '%';
     }, 300);
+})
+
+document.querySelectorAll("nav div ul li a").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault()
+
+        const targetId = link.dataset.target
+        const section = document.getElementById(targetId)
+
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+    })
 })
