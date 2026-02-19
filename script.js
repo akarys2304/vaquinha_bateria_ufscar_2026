@@ -104,7 +104,7 @@ if (btnFecharFixo && pixFixo) {
 const elementosPix = document.querySelectorAll('.copiar-pix');
 
 elementosPix.forEach(elemento => {
-    elemento.addEventListener('click', function(e) {
+    elemento.addEventListener('click', function (e) {
         // Evita que clique no botão de fechar dispare a cópia
         if (e.target.classList.contains('close-btn')) return;
 
@@ -157,6 +157,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         progressBar.style.width = porcentagem + '%';
     }, 300);
+})
+
+document.getElementById("slide-prev").addEventListener("click", () => {
+    moveSlide(-1)
+})
+document.getElementById("slide-next").addEventListener("click", () => {
+    moveSlide(1)
 })
 
 document.querySelectorAll("nav div ul li a").forEach(link => {
